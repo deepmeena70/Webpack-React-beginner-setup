@@ -27,42 +27,6 @@ const config = {
                 exclude: /node_modules/,
                 use: ['babel-loader']
             },
-
-            {
-                test: /\.css$/i,
-                use: ['style-loader', 
-                    {
-                        loader:'css-loader',
-                        options:{
-                            modules: true,
-                            sourceMap: true
-                        }
-                    }
-                ],
-            },
-            {
-                test: /\.s[ac]ss$/i,
-                use: [
-                    // Creates `style` nodes from JS strings
-                    "style-loader",
-                    // Translates CSS into CommonJS
-                    {
-                        loader: "css-loader",
-                        options: {
-                            sourceMap: true,
-                        },
-                    },
-                    // Compiles Sass to CSS
-                    {
-                        loader: "sass-loader",
-                        options: {
-                            // Prefer `dart-sass`
-                            implementation: require("sass"),
-                            sourceMap: true,
-                        },
-                    },
-                ],
-            },
             {
                 test: /\.(png|svg|jpg|jpeg|gif|mp4)$/i,
                 type: 'asset/resource',
